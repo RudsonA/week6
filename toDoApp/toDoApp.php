@@ -7,7 +7,7 @@
 <?php
 
 
-if ($_POST) {
+if ( !empty($_POST["item"]) && isset($_POST["item"])) {
     //Validating string 
     $item = $_POST["item"];
         function validateItem($item) {
