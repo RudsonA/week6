@@ -5,11 +5,6 @@
 </form>
 
 <?php
-
 include "functions.php";
-
-insertOnClick(); 
-
 include "toDoApp-current.php";
-
 ?>

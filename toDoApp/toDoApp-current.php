@@ -2,11 +2,9 @@
 <?php 
 
 include "connect.php"; 
-include "functions.php"; 
 
-echo "<table>";
-        
 deleteOnClick();
+insertOnClick(); 
 
 $stmt = $conn->prepare("SELECT id, task, progress FROM list"); 
 $stmt->execute();
@@ -14,6 +12,8 @@ $stmt->execute();
 // set the resulting array to associative
 $stmt->setFetchMode(PDO::FETCH_ASSOC); 
 $appList = $stmt->fetchAll();
+
+echo "<table>";
 
 foreach ($appList as $a) {
     echo "<tr>";
@@ -25,4 +25,5 @@ foreach ($appList as $a) {
 echo "</table>";
 
 $conn = null; 
-    ?>
+
+?>
