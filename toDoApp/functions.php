@@ -32,15 +32,14 @@ function deleteOnClick() {
 function insertOnClick() {
     if ( !empty($_POST["item"]) && isset($_POST["item"])) {
         //Validating string 
+        function validateItem($item) {
+            $item = trim($item);
+            $item = stripslashes($item);
+            $item = htmlspecialchars($item);
+            // $item = trim(stripslashes(htmlspecialchars($item)));
+            return $item;
+        }
         $item = validateItem($_POST["item"]);
-            function validateItem($data) {
-                $data = trim($data);
-                $data = stripslashes($data);
-                $data = htmlspecialchars($data);
-                // $item = trim(stripslashes(htmlspecialchars($item)));
-                return $data;
-            }
-
             //Inserting text field value uinto database
             $servername = "localhost";
             $username = "root";

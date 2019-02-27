@@ -8,7 +8,4 @@
 include "functions.php";
 include "toDoApp-current.php";
 
-if ($_POST) {
-    validateItem($_POST);
-}
 ?>
