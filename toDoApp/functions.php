@@ -6,7 +6,7 @@ function deleteOnClick() {
     if (isset($_POST['del'])) {
         $servername = "localhost"; 
         $username = "root";
-        $password = "";
+        $password = "2019";
         $dbname = "todoapp"; 
         echo $_POST['del'];
         $id = $_POST['del'];
@@ -32,20 +32,19 @@ function deleteOnClick() {
 function insertOnClick() {
     if ( !empty($_POST["item"]) && isset($_POST["item"])) {
         //Validating string 
-        $item = $_POST["item"];
-            function validateItem($item) {
-                // $item = trim($item);
-                // $item = stripslashes($item);
-                // $item = htmlspecialchars($item);
-                $item = trim(stripslashes(htmlspecialchars($item)));
-                return $item;
+        $item = validateItem($_POST["item"]);
+            function validateItem($data) {
+                $data = trim($data);
+                $data = stripslashes($data);
+                $data = htmlspecialchars($data);
+                // $item = trim(stripslashes(htmlspecialchars($item)));
+                return $data;
             }
-            validateItem($item); 
-            
+
             //Inserting text field value uinto database
             $servername = "localhost";
             $username = "root";
-            $password = "";
+            $password = "2019";
             $dbname = "todoapp";
             
             try {
